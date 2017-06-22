@@ -1,3 +1,11 @@
+# forked to add multilanguage functionality
+
+TODO
+
+- replace all hardcoded russian to english variable
+
+
+
 # yii2-ticket
 Тикет система для yii2
 
@@ -25,7 +33,7 @@ Documentation in [English](https://github.com/ricco381/yii2-ticket/blob/master/R
     Убран лишний код.
     Отправка почты перенесена в модель.
 
-1.0.4 
+1.0.4
     Добавлена загрузка картинок.
 
 ```
@@ -89,7 +97,7 @@ index.php?r=ticket/admin/index
 
 > TicketHead::getNewTicketCount()
 
-Возвращает количество всех тикетов у которых статус "0" или "1" 
+Возвращает количество всех тикетов у которых статус "0" или "1"
 
 > TicketHead::getNewTicketCountUser($status)
 
