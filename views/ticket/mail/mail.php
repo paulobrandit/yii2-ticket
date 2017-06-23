@@ -5,23 +5,23 @@ use ricco\ticket\models\TicketHead;
 <p style="text-align: left; font-size: 14px;"><?= \yii\bootstrap\Html::encode($textTicket)?></p>
 <hr/>
 <p>
-    <strong>Тикет:&nbsp;</strong><?=$nameTicket?>
+    <strong><?= Yii::t('app', 'Ticket') ?>:&nbsp;</strong><?=$nameTicket?>
     <br/>
-    <strong>Статус:&nbsp;</strong>
+    <strong><?= Yii::t('app', 'Status') ?>:&nbsp;</strong>
     <?php
     switch ($status) {
         case TicketHead::OPEN :
-            echo 'Открыт';break;
+            echo Yii::t('app', 'Open');break;
         case TicketHead::WAIT :
-            echo 'Ожидание';break;
+            echo Yii::t('app', 'Waiting');break;
         case TicketHead::ANSWER :
-            echo 'Отвечен';break;
-        case TicketHead::CLOSED :
-            echo 'Закрыт';break;
+            echo Yii::t('app', 'Answer');break;
+        case TicketHead::CLOSE :
+            echo Yii::t('app', 'Close');break;
     }
     ?>
     <br/>
-    <strong>Ссылка:&nbsp;
+    <strong><?= Yii::t('app', 'Link') ?>:&nbsp;
         <a
             href="<?=$link?>"><?=$link?>
         </a>
@@ -29,5 +29,5 @@ use ricco\ticket\models\TicketHead;
 </p>
 <hr/>
 <em>
-    <span style="color: #808080;">Это письмо сформировано автоматически службой уведомлений WallBtc.com. Отвечать на него не нужно</span>
-</em
+    <span style="color: #808080;"><?= Yii::t('app', 'This email is generated automatically by the system notification service. You do not need to respond to it.') ?></span>
+</em>

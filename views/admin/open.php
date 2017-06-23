@@ -4,14 +4,19 @@ use yii\helpers\Html;
 use yii\web\JsExpression;
 
 /** @var \ricco\ticket\models\TicketBody $ticketBody */
+
+
+
 ?>
+
+
 <div class="panel page-block">
     <div class="container-fluid row">
         <div class="col-md-12">
-            <a class="btn btn-primary" href="<?= \yii\helpers\Url::to(['admin/index']) ?>" style="margin-bottom: 10px">Назад</a>
+            <a class="btn btn-primary" href="<?= \yii\helpers\Url::to(['admin/index']) ?>" style="margin-bottom: 10px"><?= Yii::t('app', 'Go Back') ?></a>
             <div class="well">
                 <?php $form = \yii\widgets\ActiveForm::begin([]) ?>
-                <label for="">Имя пользователя</label>
+                <label for=""><?= Yii::t('app', 'Username') ?></label>
                 <?= \yii\jui\AutoComplete::widget([
                     'clientOptions' => [
                         'source'   => $users,
@@ -28,21 +33,20 @@ use yii\web\JsExpression;
                 <?= Html::activeHiddenInput($ticketHead, 'user_id') ?>
                 <?= $form->field($ticketHead, 'department')
                     ->dropDownList($qq)
-                    ->label('Сообщение')->error() ?>
+                    ->label('Message')->error() ?>
                 <?= $form->field($ticketHead, 'topic')
                     ->textInput() ?>
                 <?= $form->field($ticketBody, 'text')
                     ->textarea([
                         'style' => 'height: 150px; resize: none;',
-                    ])->label('Сообщение'); ?>
+                    ])->label('Message'); ?>
                 <div class="text-center">
-                    <button class='btn btn-primary'>Отправить</button>
+                    <button class='btn btn-primary'><?= Yii::t('app', 'Send Ticket') ?></button>
                 </div>
                 <?= $form->errorSummary($ticketBody) ?>
                 <?php $form->end() ?>
             </div>
         </div>
-
     </div>
 </div>
 </div><!-- contentpanel -->

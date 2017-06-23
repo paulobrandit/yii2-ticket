@@ -7,7 +7,7 @@ $this->title = 'Support';
 <div class="panel page-block">
     <div class="col-sx-12">
         <a class="btn btn-primary" href="<?= \yii\helpers\Url::toRoute(['ticket/index']) ?>"
-           style="margin-bottom: 10px; margin-left: 15px">Назад</a>
+           style="margin-bottom: 10px; margin-left: 15px">Go back</a>
         <?php $form = \yii\widgets\ActiveForm::begin([]) ?>
         <div class="col-xs-12">
             <?= $form->field($ticketBody, 'name_user')->textInput([
@@ -16,7 +16,7 @@ $this->title = 'Support';
             ]) ?>
         </div>
         <div class="col-xs-12">
-            <?= $form->field($ticketHead, 'topic')->textInput()->label('Сообщение')->error() ?>
+            <?= $form->field($ticketHead, 'topic')->textInput()->label(Yii::t('app', 'Message'))->error() ?>
         </div>
         <div class="col-xs-12">
             <?= $form->field($ticketHead, 'department')->dropDownList($qq) ?>
@@ -33,7 +33,7 @@ $this->title = 'Support';
             ])->label(false); ?>
         </div>
         <div class="text-center">
-            <button class='btn btn-primary'>Отправить</button>
+            <button class='btn btn-primary'><?= Yii::t('app', 'Send ticket')?></button>
         </div>
         <?php $form->end() ?>
     </div>

@@ -8,28 +8,25 @@ use Yii;
 /**
  * ticket module definition class
  */
-class Module extends \yii\base\Module
-{
+class Module extends \yii\base\Module {
+
     /**
      * @inheritdoc
      */
     public $controllerNamespace = 'ricco\ticket\controllers';
 
     /** @var bool Уведомление на почту о тикетах */
-    public $mailSend = false;
+    public $mailSend = true;
 
     /** @var string Тема email сообщения когда пользователю приходит ответ */
-    public $subjectAnswer = 'Ответ на тикет сайта exemple.com';
+    public $subjectAnswer = 'Response by the ticket';
 
     /** @var  User */
     public $userModel = false;
-
     public $qq = [
-        'Вопрос  по обмену' => 'Вопрос  по обмену',
-        'Пополнению ЛК'     => 'Пополнению ЛК',
-        'Вводу средств'     => 'Вводу средств',
-        'Выводу средств'    => 'Выводу средств',
-        'Другое'            => 'Другое',
+        'ask_question' => 'Ask Question',
+        'bug' => 'Report a Bug',
+        'new_feature' => 'New Feature',
     ];
 
     /** @var array Ники администраторав */
@@ -53,9 +50,24 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public function init()
-    {
+    public function init() {
         User::$user = ($this->userModel !== false) ? $this->userModel : Yii::$app->user->identityClass;
         parent::init();
+        $this->registerTranslations();
     }
+    /**
+     * Registration of translation class.
+     */
+    protected function registerTranslations()
+    {
+        Yii::$app->i18n->translations['ricco/ticket'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'en',
+            'basePath' => '@ricco/ticket/messages',
+            'fileMap' => [
+                'ricco/ticket' => 'ticket.php',
+            ],
+        ];
+    }
+
 }

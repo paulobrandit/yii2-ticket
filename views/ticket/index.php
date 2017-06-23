@@ -20,7 +20,7 @@ $this->registerJs("
     <div class="container-fluid row">
         <div class="col-lg-12">
             <a type="button" href="<?= Url::to(['ticket/open']) ?>" class="btn btn-primary pull-right"
-               style="margin-right: 10px">Открыть</a>
+               style="margin-right: 10px">Open new ticket</a>
             <div class="clearfix" style="margin-bottom: 10px"></div>
             <div>
                 <?= \yii\grid\GridView::widget([
@@ -38,13 +38,13 @@ $this->registerJs("
                             'value'          => function ($model) {
                                 switch ($model['status']) {
                                     case TicketHead::OPEN :
-                                        return '<div class="label label-default">Открыт</div>';
+                                        return '<div class="label label-default">'.Yii::t('app', 'Open').'</div>';
                                     case TicketHead::WAIT :
-                                        return '<div class="label label-warning">Ожидание</div>';
+                                        return '<div class="label label-warning">'.Yii::t('app', 'In progress').'</div>';
                                     case TicketHead::ANSWER :
-                                        return '<div class="label label-success">Отвечен</div>';
-                                    case TicketHead::CLOSED :
-                                        return '<div class="label label-info">Закрыт</div>';
+                                        return '<div class="label label-success">'.Yii::t('app', 'Answer').'</div>';
+                                    case TicketHead::CLOSE :
+                                        return '<div class="label label-info">'.Yii::t('app', 'Close').'</div>';
                                 }
                             },
                             'format'         => 'html',

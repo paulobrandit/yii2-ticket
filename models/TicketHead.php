@@ -29,6 +29,7 @@ class TicketHead extends \yii\db\ActiveRecord
 
     /**
      * Статусы тикетов
+     * EGS: be carefull to not translate or change this constants
      */
     const OPEN = 0;
     const WAIT = 1;
@@ -86,12 +87,12 @@ class TicketHead extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'user_id'     => 'User ID',
-            'department'  => 'Отдел',
-            'topic'       => 'Тема',
-            'status'      => 'Status',
-            'date_update' => 'Последнее обновление',
+            'id'          => Yii::t('app', 'ID'),
+            'user_id'     => Yii::t('app', 'User ID'),
+            'department'  => Yii::t('app', 'Departament'),
+            'topic'       => Yii::t('app', 'Тopic'),
+            'status'      => Yii::t('app', 'Status'),
+            'date_update' => Yii::t('app', 'Date Updated'),
         ];
     }
 

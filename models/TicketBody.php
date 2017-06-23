@@ -60,10 +60,10 @@ class TicketBody extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'        => 'ID',
-            'name_user' => 'Name User',
-            'text'      => 'Text',
-            'date'      => 'Date',
+            'id'        => Yii::t('app', 'ID'),
+            'name_user' => Yii::t('app', 'Name User'),
+            'text'      => Yii::t('app', 'Text'),
+            'date'      => Yii::t('app', 'Date')
         ];
     }
 
