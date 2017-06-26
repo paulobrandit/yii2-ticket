@@ -4,7 +4,7 @@
 
 <div class="panel page-block">
     <div class="container-fluid row">
-    <a href="<?= \yii\helpers\Url::toRoute(['admin/open']) ?>" class="btn btn-primary" style="margin-left: 15px"><?= Yii::t('app', 'New Ticket') ?></a>
+    <a href="<?= \yii\helpers\Url::toRoute(['admin/open']) ?>" class="btn btn-primary" style="margin-left: 15px"><?= Yii::t('ticket', 'New Ticket') ?></a>
     <br><br>
     <div class="container-fluid">
         <div class="col-md-12">
@@ -38,16 +38,16 @@
                             switch ($model->body['client']) {
                                 case 0 :
                                     if ($model->status == \ricco\ticket\models\TicketHead::CLOSED) {
-                                        return '<div class="label label-success">Client</div>&nbsp;<div class="label label-default">'.Yii::t('app', 'Close').'</div>';
+                                        return '<div class="label label-success">Client</div>&nbsp;<div class="label label-default">'.Yii::t('ticket', 'Close').'</div>';
                                     }
 
                                     return '<div class="label label-success">Client</div>';
                                 case 1 :
                                     if ($model->status == \ricco\ticket\models\TicketHead::CLOSED) {
-                                        return '<div class="label label-primary">'.Yii::t('app', 'Administrator').'</div>&nbsp;<div class="label label-default">'.Yii::t('app', 'Close').'</div>';
+                                        return '<div class="label label-primary">'.Yii::t('ticket', 'Administrator').'</div>&nbsp;<div class="label label-default">'.Yii::t('ticket', 'Close').'</div>';
                                     }
 
-                                    return '<div class="label label-primary">'.Yii::t('app', 'Administrator').'</div>';
+                                    return '<div class="label label-primary">'.Yii::t('ticket', 'Administrator').'</div>';
                             }
                         },
                         'format'    => 'html',
@@ -64,25 +64,25 @@
                         ],
                         'buttons'       => [
                             'update' => function ($url, $model) {
-                                return \yii\helpers\Html::a(Yii::t('app', 'Reply'),
+                                return \yii\helpers\Html::a(Yii::t('ticket', 'Reply'),
                                     \yii\helpers\Url::toRoute(['admin/answer', 'id' => $model['id']]),
                                     ['class' => 'btn-xs btn-info']);
                             },
                             'delete' => function ($url, $model) {
-                                return \yii\helpers\Html::a(Yii::t('app', 'Delete'),
+                                return \yii\helpers\Html::a(Yii::t('ticket', 'Delete'),
                                     \yii\helpers\Url::to(['admin/delete', 'id' => $model['id']]),
                                     [
                                         'class'   => 'btn-xs btn-danger',
-                                        'onclick' => "return confirm(".Yii::t('app', 'Do you really want to delete?').")",
+                                        'onclick' => "return confirm(".Yii::t('ticket', 'Do you really want to delete?').")",
                                     ]
                                 );
                             },
                             'closed' => function ($url, $model) {
-                                return \yii\helpers\Html::a(Yii::t('app', 'Close'),
+                                return \yii\helpers\Html::a(Yii::t('ticket', 'Close'),
                                     \yii\helpers\Url::to(['admin/closed', 'id' => $model['id']]),
                                     [
                                         'class'   => 'btn-xs btn-primary',
-                                        'onclick' => "return confirm(".Yii::t('app', 'Are you sure you want to close the ticket?').")",
+                                        'onclick' => "return confirm(".Yii::t('ticket', 'Are you sure you want to close the ticket?').")",
                                     ]
                                 );
                             },

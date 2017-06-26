@@ -87,12 +87,12 @@ class TicketHead extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => Yii::t('app', 'ID'),
-            'user_id'     => Yii::t('app', 'User ID'),
-            'department'  => Yii::t('app', 'Departament'),
-            'topic'       => Yii::t('app', 'Тopic'),
-            'status'      => Yii::t('app', 'Status'),
-            'date_update' => Yii::t('app', 'Date Updated'),
+            'id'          => Yii::t('ticket', 'ID'),
+            'user_id'     => Yii::t('ticket', 'User ID'),
+            'department'  => Yii::t('ticket', 'Departament'),
+            'topic'       => Yii::t('ticket', 'Тopic'),
+            'status'      => Yii::t('ticket', 'Status'),
+            'date_update' => Yii::t('ticket', 'Date Updated'),
         ];
     }
 

@@ -60,12 +60,12 @@ class Module extends \yii\base\Module {
      */
     protected function registerTranslations()
     {
-        Yii::$app->i18n->translations['ricco/ticket'] = [
+        Yii::$app->i18n->translations['ticket'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en',
             'basePath' => '@ricco/ticket/messages',
             'fileMap' => [
-                'ricco/ticket' => 'ticket.php',
+              'ticket' => 'ticket.php',
             ],
         ];
     }

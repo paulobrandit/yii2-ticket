@@ -13,10 +13,10 @@ $this->title = 'Support';
     <div class="container-fluid row">
         <div class="col-lg-12">
             <a class="btn btn-primary" href="<?= \yii\helpers\Url::to(['ticket/index']) ?>"
-               style="margin-bottom: 10px; margin-left: 15px">Go back</a>
+               style="margin-bottom: 10px; margin-left: 15px"><?= Yii::t('ticket', 'Go back') ?></a>
             <a class="btn btn-primary" style="width: 100%" role="button" data-toggle="collapse" href="#collapseExample"
                aria-expanded="false" aria-controls="collapseExample">
-                <i class="glyphicon glyphicon-pencil pull-left"></i><span><?= Yii::t('app', 'Answer') ?></span>
+                <i class="glyphicon glyphicon-pencil pull-left"></i><span><?= Yii::t('ticket', 'Answer') ?></span>
             </a>
             <?php if ($error = Yii::$app->session->getFlash('error')) : ?>
                 <div class="alert alert-danger text-center" style="margin-top: 10px;"><?= $error ?></div>
@@ -25,13 +25,13 @@ $this->title = 'Support';
                 <div class="well">
                     <?php $form = \yii\widgets\ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
                     <?= $form->field($newTicket,
-                        'text')->textarea(['style' => 'height: 150px; resize: none;'])->label( Yii::t('app', 'Message'))->error() ?>
+                        'text')->textarea(['style' => 'height: 150px; resize: none;'])->label( Yii::t('ticket', 'Message'))->error() ?>
                     <?= $form->field($fileTicket, 'fileName[]')->fileInput([
                         'multiple' => true,
                         'accept'   => 'image/*',
                     ])->label(false); ?>
                     <div class="text-center">
-                        <button class='btn btn-primary'><?= Yii::t('app', 'Send ticket')?></button>
+                        <button class='btn btn-primary'><?= Yii::t('ticket', 'Send Ticket')?></button>
                     </div>
                     <?= $form->errorSummary($newTicket) ?>
                     <?php $form->end() ?>
@@ -42,7 +42,7 @@ $this->title = 'Support';
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                 <span><?= $ticket['name_user'] ?>&nbsp;<span
-                        style="font-size: 12px">(<?= ($ticket['client'] == 1) ? Yii::t('app', 'Developer') : Yii::t('app', 'Client') ?>)</span></span>
+                        style="font-size: 12px">(<?= ($ticket['client'] == 1) ? Yii::t('ticket', 'Developer') : Yii::t('ticket', 'Client') ?>)</span></span>
                         <span class="pull-right"><?= $ticket['date'] ?></span>
                     </div>
                     <div class="panel-body clearfix" style="word-wrap: break-word;">

@@ -13,10 +13,10 @@ use yii\web\JsExpression;
 <div class="panel page-block">
     <div class="container-fluid row">
         <div class="col-md-12">
-            <a class="btn btn-primary" href="<?= \yii\helpers\Url::to(['admin/index']) ?>" style="margin-bottom: 10px"><?= Yii::t('app', 'Go Back') ?></a>
+            <a class="btn btn-primary" href="<?= \yii\helpers\Url::to(['admin/index']) ?>" style="margin-bottom: 10px"><?= Yii::t('ticket', 'Go Back') ?></a>
             <div class="well">
                 <?php $form = \yii\widgets\ActiveForm::begin([]) ?>
-                <label for=""><?= Yii::t('app', 'Username') ?></label>
+                <label for=""><?= Yii::t('ticket', 'Username') ?></label>
                 <?= \yii\jui\AutoComplete::widget([
                     'clientOptions' => [
                         'source'   => $users,
@@ -41,7 +41,7 @@ use yii\web\JsExpression;
                         'style' => 'height: 150px; resize: none;',
                     ])->label('Message'); ?>
                 <div class="text-center">
-                    <button class='btn btn-primary'><?= Yii::t('app', 'Send Ticket') ?></button>
+                    <button class='btn btn-primary'><?= Yii::t('ticket', 'Send Ticket') ?></button>
                 </div>
                 <?= $form->errorSummary($ticketBody) ?>
                 <?php $form->end() ?>

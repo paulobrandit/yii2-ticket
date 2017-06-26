@@ -48,10 +48,10 @@ class TicketFile extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'       => Yii::t('app', 'ID'),
-            'id_body'  => Yii::t('app', 'Id Body'),
-            'fileName' => Yii::t('app', 'File Name'),
-            'document_name' => Yii::t('app', 'Document name'),
+            'id'       => Yii::t('ticket', 'ID'),
+            'id_body'  => Yii::t('ticket', 'Id Body'),
+            'fileName' => Yii::t('ticket', 'File Name'),
+            'document_name' => Yii::t('ticket', 'Document name'),
         ];
     }
 
